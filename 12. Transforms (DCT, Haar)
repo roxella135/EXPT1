@@ -1,0 +1,27 @@
+Task 1: To perform DCT (Discrete Cosine Transforms) on Input Image
+clc;
+clear all;
+close all;
+RGB = imread ('autumn.tif');
+I = rgb2gray (RGB);
+J = dct2 (I);
+subplot(2,2,1), imshow (log(abs(J)),[]),title('DCT'), colormap (jet(64)), colorbar;
+J(abs(J) < 10) = 0;
+K = idct2 (J);
+subplot (2,2,2), imshow (RGB), title ('Original Image')
+subplot (2,2,3), imshow (I), title('RGB to Gray')
+subplot (2,2,4), imshow (K,[0 255]), title('Inverse DCT')
+OUTPUT
+
+
+
+PROGRAM
+Task 2: To perform Haar Transform on Input Image
+y= imread ('peppers.png');
+subplot (1,2,1), imshow(y), title ('Orginal Image')
+x=rgb2gray(y);
+[LL,LH,HL,HH] = dwt2 (x,'haar');
+subplot(1,2,2), imshow (uint8(LL)); title ('Haar Transform')
+OUTPUT
+
+
