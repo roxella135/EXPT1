@@ -1,0 +1,164 @@
+Image Sampling 
+Resizing the input image
+clc;
+clear all;
+close all;
+im=imread('C:\Documents and Settings\user\Desktop\Images\cameraman.jpg');
+im7=imshow(im);
+im1=imresize(im, [1024 1024]);
+im2=imresize(im1, [1024 1024]/2);
+im3=imresize(im1, [1024 1024]/4);
+im4=imresize(im1, [1024 1024]/8);
+im5=imresize(im1, [1024 1024]/16);
+im6=imresize(im1, [1024 1024]/32);
+figure;imshow(im1)
+figure;imshow(im2)
+figure;imshow(im3)
+figure;imshow(im4)
+figure;imshow(im5)
+figure;
+subplot(2,3,1);imshow(im1);title('1024');subplot(2,3,2);imshow(im2);title('512')
+subplot(2,3,3);imshow(im3);title('256');subplot(2,3,4);imshow(im4);title('128')
+subplot(2,3,5);imshow(im5);title('64'); subplot(2,3,6);imshow(im6);title('32')
+OUTPUT
+
+
+
+
+
+Image Zooming and Shrinking
+% Shrinking
+clc;
+clear all;
+close all;
+A=imread('cameraman.tif');
+display('Input Image ==> cameraman.tif');
+f=input('Enter the shrinking factor of the image: ');
+s=size(A);
+s1=s/f;
+k=1;
+l=1;
+for i=1:s1
+    for j=1:s1
+        B(i,j)=A(k,l);
+        l=l+f;
+    end
+    l=1;
+    k=k+f;
+end
+figure,imshow(A)
+title('Original Image');
+figure,imshow(B)
+title('Shrinked Version');
+OUTPUT
+
+
+
+
+ 
+% Zooming
+f1=input('Enter the factor by which the image is to be Zoomed: ');
+s2=s*f1;
+k=1;
+l=1;
+for (i=1:f1:s2)
+    for( j=1:f1:s2)
+        C(i,j)= A(k,l);
+        l=l+1;
+    end
+    l=1;
+    k=k+1;
+end
+ for (i=1:f1:s2)
+    for (j=2:f1:s2-1)
+        C(i,j)=[C(i,j-1)+C(i,j+1)]*0.5;
+    end
+end
+ for(j=1:f1:s2)
+    for(i=2:f1:s2-1)
+        C(i,j)=[C(i-1,j)+C(i+1,j)]*0.5;
+    end
+end
+ for (i=2:f1:s2-1)
+    for (j=2:f1:s2-1)
+        C(i,j)= [C(i,j-1)+C(i, j+1)]*0.5;
+    end
+end
+figure,imshow(C)
+title('Zoomed Image')
+OUTPUT
+
+
+
+
+
+
+Image cropping
+clc;
+close all;  
+clear all;
+i=imread('cameraman.tif');
+subplot(2,2,1);
+imshow(i);
+title('original image');
+j=imcrop(i,[50,100,100,300]);
+subplot(2,2,2);
+imshow(j);
+title('cropped image');
+OUTPUT
+
+
+
+
+
+To display an image with specified degree of rotation
+clc;
+clear all;
+close all;    
+a=imread('C:\ProgramFiles\MATLAB71\toolbox\images\imdemos\trees.tif);
+subplot(2,3,1:2:3);
+imshow(a);
+title('Original image');
+subplot(2,3,4);
+imshow(imrotate(a,30));
+title('30 Degree rotated image');
+subplot(2,3,5);
+imshow(imrotate(a,60));
+title('60 Degree rotated image');
+subplot(2,3,6);
+imshow(imrotate(a,90));
+title('90 Degree rotated image');
+OUTPUT
+
+
+
+
+
+
+
+
+Image Quantization
+clc;
+clear all;
+close all;
+%Read image and display it.
+rgb=imread('onion.png'); 
+subplot(2,2,1);
+imshow(rgb);
+%Create an indexed image with eight colors and without dithering.
+[X_no_dither,map]= rgb2ind(rgb,8,'nodither');
+subplot(2,2,2);
+imshow(X_no_dither,map);
+%Create an indexed image using eight colors with dithering.
+[X_dither,map]=rgb2ind(rgb,8,'dither');
+subplot(2,2,3);
+imshow(X_dither,map);
+OUTPUT
+
+
+
+
+
+
+
+
