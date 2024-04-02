@@ -1,0 +1,108 @@
+PROGRAM
+Perform Image Segmentation using Edge detection algorithm
+clc; clear all; close all;
+%% Reading the Image file
+RGB=imread('C:\Documents and Settings\user\Desktop\Training - Images\Sample Images\2.jpg');
+%% Converting RGB into GRAYSCALE image
+GRAY = rgb2gray(RGB);
+%%Edge detection
+Edge1=edge(GRAY, 'canny');
+Edge2=edge(GRAY, 'sobel');
+Edge3=edge(GRAY, 'prewitt');
+ 
+figure;
+imshow(RGB);
+title('Input image');
+figure;
+imshow(GRAY);
+title('Grayscale image');
+ 
+subplot(1,3,1)
+imshow(Edge1);
+title('Cannay Edge Detection');
+subplot(1,3,2)
+imshow(Edge2);
+title('Sobel Edge Detection');
+subplot(1,3,3)
+imshow(Edge3);
+title('Prewitt Edge Detection');
+OUTPUT
+                   
+
+
+
+
+
+
+Image Segmentation using Line detection and Point detection algorithm
+
+clc;
+clear all;
+close all;
+a=imread('C:\Documents and Settings\user\Desktop\Training - Images\Sample Images\ checkerCnn.jpg');
+b=im2bw(a);
+c=[-1 -1 -1; 2 2 2; -1 -1 -1];
+d=[-1 2 -1; -1 2 -1; -1 2 -1];
+e=[-1 -1 -1; -1 8 -1; -1 -1 -1];
+g=(imfilter(double(b),c));
+g=abs(g);
+T=max(g(:));
+g=g>=T;
+%+45 degree
+h=(imfilter(double(b),d));
+h=abs(h);
+l=max(h(:));
+h=h>=l;
+% point detetion
+i=(imfilter(double(b),e));
+i=abs(i);
+T=max(i(:));
+i=i>=T;
+subplot(2,2,1);
+imshow(a);
+title('Original Image');
+subplot(2,2,2);
+imshow(g);
+title('Horizontal Line Detection');
+subplot(2,2,3);
+imshow(h);
+title('Vertical Line Detection');
+subplot(2,2,4);
+imshow(i);
+title('Point Detection');
+OUTPUT
+
+
+
+
+
+
+
+
++45 AND -45 DEGREE LINE DETECTION
+clc;
+clear all;
+close all;
+a=imread('C:\Documents and Settings\user.BMECOMP158\My Documents\Downloads\line2.png');
+b=im2bw(a);
+c=[-1 -1 2; -1 2 -1; 2 -1 -1];
+d=[2 -1 -1 ; -1 2 -1; -1 -1 2];
+g=(imfilter(double(b),c));
+g=abs(g);
+T=max(g(:));
+g=g>=T;
+%-45 degree
+h=(imfilter(double(b),d));
+h=abs(h);
+T=max(h(:));
+h=h>=T;
+subplot(2,2,1);
+imshow(a);
+title('Original Image');
+subplot(2,2,2);
+imshow(g);
+title('+45 Degree Line Detection');
+subplot(2,2,3);
+imshow(h);
+title('-45 Degree Line Detection');
+OUTPUT
