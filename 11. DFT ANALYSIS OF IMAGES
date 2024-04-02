@@ -1,0 +1,13 @@
+%Fourier Transform
+clc; clear all
+Close all
+ f = zeros (30, 30);
+f (5:24,13:17) = 1;
+imshow (f, 'notruesize')
+ 
+% Compute and visualize the 30-by-30 DFT of f 
+F = fft2 (f,256, 256);
+F2 = fftshift (F);
+figure
+imshow (log(abs(F2)),[-1 5], 'notruesize'); colormap (jet); colorbar
+OUTPUT
