@@ -1,0 +1,40 @@
+Changing the Intensity gray Resolution From 256 to 2
+% Changing the Gray Resolution From 256 to 2
+I = imread('cameraman.tif');
+[r,c] = size(I);
+I2= uint8(zeros(r,c));
+for i = 1:r
+for j=1:c
+if (I(i,j)>128)
+I2(i,j) =256;
+else
+I2(i,j) =1;
+end
+end
+end
+figure,
+subplot(121),imshow(I);
+title('Orginal Image');
+subplot(122),imshow(I2);
+title('Change in intensity resolution');
+
+OUTPUT
+
+
+
+
+
+
+Changing the Spatial Resolution from 1 bit image to 8 bit image
+clc
+clear all;
+close all;
+A = imread('onion.png');
+C=rgb2gray(A);
+[B,map] = gray2ind(C,2^4);
+nImage = ind2gray(B,map);
+subplot(2,1,1);imshow(C);title('Orginal image');
+subplot(2,1,2);imshow(nImage);title('Change in Spatial Resolution');
+whos A; whos C; whos nImage;
+
+OUTPUT
