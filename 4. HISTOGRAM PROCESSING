@@ -1,0 +1,17 @@
+clc;
+clear all;
+close all;
+I = imread('file:///Users/rivle/Desktop/MIP%20Lab/Screenshot%202024-03-22%20at%2010.51.48%E2%80%AFAM.png');
+subplot(2,2,1);
+imshow(I);
+title('Original Image');
+subplot(2,2,2);
+imhist(I);
+title('Before Equalisation');
+J = histeq(I);
+subplot(2,2,3);
+imshow(J);
+title('Equalised Image');
+subplot(2,2,4);
+imhist(J);
+title('After Equalisation');
