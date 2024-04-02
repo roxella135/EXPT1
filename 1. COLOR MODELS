@@ -25,21 +25,6 @@ OUTPUT
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Extraction and analysis of color components
 clc; clear all; close all;
 RGB=imread ('C:\Documents and Settings\user\Desktop\Images\Flower.png');
@@ -72,18 +57,6 @@ OUTPUT
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 Seperation of color from RGB planes
 clc
 clear all;
@@ -112,20 +85,6 @@ whos a1;
 whos b1; 
 whos c1;
 OUTPUT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
