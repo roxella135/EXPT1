@@ -1,0 +1,87 @@
+Computing the blurring effect on an image using motion and disk command and Enhance input image by sharpening technique.
+
+I = imread('cameraman.tif');
+subplot(2,2,1); 
+imshow(I); title('Original Image');
+ 
+H = fspecial('motion',20,45);
+MotionBlur = imfilter(I,H,'replicate');
+subplot(2,2,2); 
+imshow(MotionBlur);title('Motion Blurred Image');
+ 
+H = fspecial('disk',10);
+blurred = imfilter(I,H,'replicate');
+subplot(2,2,3); 
+imshow(blurred); title('Blurred Image');
+ 
+H = fspecial('unsharp');
+sharpened = imfilter(I,H,'replicate');
+subplot(2,2,4); 
+imshow(sharpened); title('Sharpened Image');
+
+
+OUTPUT
+
+
+
+
+
+
+
+
+Appling Box Filter (3*3) and (5*5) and do smoothing process of input image.
+clc;
+clear all;
+close all;
+a=imread ('coins.png');
+h1=1/9*ones (3,3);
+h2=1/25*ones (5,5);
+b1=conv2 (a,h1,'same');
+b2=conv2 (a,h2,'same');
+subplot (2,2,1);
+imshow (a),
+title ('orginal Image');
+subplot (2,2,2);
+imshow (uint8(b1));
+title ('output using 3*3 mask');
+subplot (2,2,3);
+imshow (uint8(b2));
+title ('output using 5*5 mask');
+OUTPUT
+
+
+
+
+
+
+
+
+Removing the salt and pepper Noise using Average filter and Median Filter
+clc;
+clear all;
+A=imread('C:\Documents and Settings\user\Desktop\Images\rose.jpg');
+figure
+I=rgb2gray(A)
+J = imnoise(I,'salt & pepper',0.02);
+K = filter2(fspecial('average',3),J)/255;
+M = medfilt2(J);
+subplot(2,2,1)
+imshow(I)
+title ('Orginal Image');
+subplot(2,2,2)
+imshow(J)
+title ('Salt & Pepper Noise');
+subplot(2,2,3)
+imshow(K)
+title ('Filtering by using average Filter');
+subplot(2,2,4)
+imshow(M)
+title ('Filtering by using median Filter');
+
+
+OUTPUT
+
+
+
+
+
