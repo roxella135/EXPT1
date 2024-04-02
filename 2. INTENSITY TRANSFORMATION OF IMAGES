@@ -1,0 +1,128 @@
+Negative Transformation and Log Transformation
+clc; clear all; close all;
+I=imread('tire.tif');
+imshow(I)
+J=255-I;
+subplot(3,2,1)
+imshow(I); title('Orginal Image')
+subplot(3,2,2)
+imshow(J);title('Negative Transformation');
+I2=im2double(I);
+K1=1*log(1+I2);
+K2=2*log(1+I2);
+K3=5*log(1+I2);
+subplot(3,2,3)
+imshow(K1);title('Log Transformation(c=1)');
+subplot(3,2,4)
+imshow(K2);title('Log Transformation(c=2)');
+subplot(3,2,5)
+imshow(K3);title('Log Transformation(c=5)');
+
+Output
+                         
+
+
+
+
+
+
+
+Gamma Transformation
+Program 1
+clc; 
+clear all; 
+close all;
+I=imread('C:\Documents and Settings\user\Desktop\Pradeep\Images\spine.jpg');
+J1=imadjust(I,[],[],1);
+J2=imadjust(I,[],[],0.4);
+J3=imadjust(I,[],[],0.5);
+subplot(2,2,1)
+imshow(I); title('Orginal Image');
+subplot(2,2,2)
+imshow(J1); title('Gamma Transformation(Gamma=1)');
+subplot(2,2,3)
+imshow(J2); title('Gamma Transformation(Gamma=0.4)');
+subplot(2,2,4)
+imshow(J1); title('Gamma Transformation(Gamma=0.5)');
+OR
+Program 2
+clc;
+clear all;
+close all;
+j=imread('C:\Documents and Settings\user.BMECOMP185\Desktop\Images\spine.jpg');
+j2=im2double(j);
+subplot(3,3,1);imshow(j);title('original image');whos j;
+subplot(3,3,2);imshow(j2);title('unit2 doubled image');whos j2;
+b=j2.^(.4);
+c=j2.^(.8);
+d=j2.^(2);
+subplot(3,3,3);imshow(b);title('gamma corre for 0.4');whos b;
+subplot(3,3,4);imshow(c);title('gamma corre for 0.8');whos c;
+subplot(3,3,5);imshow(d);title('gamma corre for2');whos d;
+
+Output
+
+
+
+
+
+
+Contrast streatching 
+clc; 
+clear all; close all;
+I=imread('C:\Documents and Settings\user\Desktop\Pradeep\Images\zebra.png');
+I2=im2double(I);
+m=mean2(I2)
+contrast1=1./(1+(m./(I2+eps)).^4);
+contrast2=1./(1+(m./(I2+eps)).^5);
+contrast3=1./(1+(m./(I2+eps)).^-1);
+subplot(2,2,1)
+imshow(I); title('Orginal Image');
+subplot(2,2,2)
+imshow(contrast1); title('Contrast streatching(E=0.4)');
+subplot(2,2,3)
+imshow(contrast2); title('Contrast streatching(E=0.5)');
+subplot(2,2,4)
+imshow(contrast3); title('Contrast streatching(E=-1)');
+Output
+
+
+
+
+
+
+
+
+Intensity Level Slicing
+clc; 
+clear all; close all;
+I = imread('C:\Documents and Settings\user\Desktop\Pradeep\Images\angiogram.jpg');
+image = I (:,:,1);
+rmin = 100;            %decide the min. level of intensity level slicing range
+rmax = 180;           %decide the max. level of intensity level slicing range
+[r,c]= size(image); % get the dimensions of image
+s = zeros(r,c);        % pre allocate a variable to store the result image
+for i = 1:r
+    for j = 1:c          % if the current pixel of original image is in the specfied range then           make it 0 in the result image
+        if (rmin < image(i,j)&& image(i,j) < rmax)  
+            s(i,j) = 0;
+        else
+            s(i,j) = image(i,j); % otherwise store the same value of the pixel in the image
+        end
+    end
+end
+subplot(1,2,1)
+imshow(uint8(image)); title('Orginal Image');
+subplot(1,2,2)
+imshow(uint8(s)); title('Intensity Level Slicing');
+Output
+
+
+
+
+
+
+
+
+
+
