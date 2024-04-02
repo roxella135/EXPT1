@@ -1,0 +1,15 @@
+a=imread ('circles.png');
+figure; imshow (a); title ('Orginal Image')
+BW1 = bwmorph (a,'remove');
+subplot (2,2,1)
+imshow (BW1); title ('Removes interior pixels')
+BW2 = bwmorph (a,'dilate');
+subplot (2,2,2)
+imshow (BW2); title ('Dilation')
+BW3 = bwmorph (a,'erode');
+subplot (2,2,3)
+imshow (BW3); title ('Erode')
+BW4 = bwmorph (a,'skel', 100);
+subplot (2,2,4)
+imshow (BW4); title ('Skeleton of Image')
+OUTPUT
