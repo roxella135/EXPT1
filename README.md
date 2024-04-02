@@ -35,6 +35,44 @@
 <img width="625" alt="Screenshot 2024-04-02 at 10 00 19 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/fdc63cee-8411-4977-af2c-c7a1eddad7c7">
 
 
+7.
+<img width="265" alt="Screenshot 2024-04-02 at 10 02 38 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/9cf2828a-a24c-4e3f-bdd0-62c8a2a6811e">
+<img width="338" alt="Screenshot 2024-04-02 at 10 02 50 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/ff1a209d-1075-48dc-aedd-3680862e0fbf">
+<img width="325" alt="Screenshot 2024-04-02 at 10 02 58 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/67164f79-dfbd-4748-9a4a-91ee5eb983df">
+
+8.
+<img width="451" alt="Screenshot 2024-04-02 at 10 03 37 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/abb309cf-4630-4707-9a48-16cdb8271947">
+<img width="403" alt="Screenshot 2024-04-02 at 10 04 01 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/48a170e7-0619-4ab2-b87a-f4409321573f">
+<img width="432" alt="Screenshot 2024-04-02 at 10 04 18 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/c7b4691d-20f9-4c57-b8e2-0bfc20635252">
+
+
+9.
+<img width="382" alt="Screenshot 2024-04-02 at 10 05 47 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/009334b2-7885-4b6c-95d2-20cf8e396359">
+<img width="384" alt="Screenshot 2024-04-02 at 10 06 02 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/ef09fc78-dda4-4517-85be-bc7469ef8a65">
+
+
+10.
+<img width="494" alt="Screenshot 2024-04-02 at 10 06 33 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/1814fcd7-9113-4fb7-ad63-1d684601cc5f">
+
+
+11. 
+<img width="384" alt="Screenshot 2024-04-02 at 10 06 58 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/0e5f1ef0-0e51-4b61-9331-7b2813e2db55">
+
+12.
+<img width="294" alt="Screenshot 2024-04-02 at 10 08 50 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/79462710-a2a4-42b5-8dcb-da778bd921ee">
+<img width="399" alt="Screenshot 2024-04-02 at 10 09 54 PM" src="https://github.com/roxella135/EXPT1/assets/165697157/0e6276e9-8137-46db-bd79-4f01ec0f5158">
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
