@@ -1,0 +1,175 @@
+Analysis of color image conversion models
+clc
+clear all;
+close all;
+a=imread('C:\Documents and Settings\user\Desktop\Images\Flower.png');
+b=rgb2gray(a);
+c=mat2gray(b);
+d=im2bw(b);
+subplot(2,2,1);
+imshow(a);
+title('Orginal image');
+subplot(2,2,2);
+imshow(b);
+title('Grayscale Image');
+subplot(2,2,3);
+imshow(c);
+title('Matrix Converted Image');
+subplot(2,2,4);
+imshow(d);
+title('Binary Image');
+OUTPUT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Extraction and analysis of color components
+clc; clear all; close all;
+RGB=imread ('C:\Documents and Settings\user\Desktop\Images\Flower.png');
+R=RGB;
+G=RGB;
+B=RGB;
+R(:,:,2)=0;
+R(:,:,3)=0;
+G(:,:,1)=0;
+G(:,:,3)=0;
+B(:,:,1)=0;
+B(:,:,2)=0;
+subplot(2,2,1);
+imshow(RGB),
+title('original image');
+subplot(2,2,2);
+imshow(R),
+title('Red component');
+subplot(2,2,3);
+imshow(G),
+title('Green component');
+subplot(2,2,4);
+imshow(B),
+title('Blue component');
+whos RGB;
+whos R; whos G; whos B;
+
+OUTPUT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Seperation of color from RGB planes
+clc
+clear all;
+close all;
+a=imread ('C:\Documents and Settings\user\Desktop\Images\Flower.png');
+a1=a;
+b1=a;
+c1=a;
+a1(:,:,1)=0;
+b1(:,:,2)=0;
+c1(:,:,3)=0;
+subplot(2,2,1);
+imshow(a),
+title('original image');
+subplot(2,2,2);
+imshow(a1),
+title('Red missing');
+subplot(2,2,3);
+imshow(b1),
+title('Green missing');
+subplot(2,2,4);
+imshow(c1),
+title('Blue missing');
+whos a; 
+whos a1;
+whos b1; 
+whos c1;
+OUTPUT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Analysis of HIS Model
+clc
+clear all; close all;
+I=imread('C:\Documents and Settings\user\Desktop\Images\Flower.png');
+Y=rgb2ntsc(I);
+J=Y(:,:,1);
+K=Y(:,:,2);
+L=Y(:,:,3);
+M=ntsc2rgb(Y);
+subplot(3,3,1);
+imshow(I),
+title('Original image');
+subplot(3,3,2);
+imshow(Y),
+title('RGB to NTSC');
+subplot(3,3,3);
+imshow(J),
+title('Luminance');
+subplot(3,3,4);
+imshow(K),
+title('Hue');
+subplot(3,3,5);
+imshow(L),
+title('Saturation');
+subplot(3,3,6);
+imshow(M),
+title('NTSC to RGB');
+gtext('Conversion Of Color Space Models');
+OUTPUT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
